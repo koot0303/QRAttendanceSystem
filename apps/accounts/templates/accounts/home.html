@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang='ja'>
+    <head>
+        <meta charset='UTF-8' />
+        <title>ホーム</title>
+    </head>
+    <body>
+            <h1>ホーム</h1>
+            <button type="button" onclick="location.href=`{% url 'accounts:signup_account_selection' %}`">
+                アカウント登録
+            </button>
+            <br>
+            <br>
+            <button type="button" onclick="location.href=`{% url 'accounts:login' %}`">
+                ログイン
+            </button>
+    </body>
+</html>

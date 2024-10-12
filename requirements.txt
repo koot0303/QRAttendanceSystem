@@ -1,0 +1,9 @@
+# Python==3.10.11
+# pip==23.0.1
+
+# pip install -r requirements.txt
+Django==5.0.6
+qrcode==7.4.2
+pytz==2024.1
+openpyxl==3.1.5
+python-dotenv==1.0.1

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>ユーザーページ</title>
+    </head>
+    <body>
+        <h1>ユーザーページ</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="id_name">{{ user.username }} でログイン中</label>
+            <br>
+            <br>
+            {% if user.account_type == 'teacher' %}
+                <button type="button" onclick="location.href=`{% url 'courses:select' %}`">
+                    授業管理ページへ
+                </button>
+            {% elif user.account_type == 'student' %}
+                <button type="button" onclick="location.href=`{% url 'students_qr:generate_qr' %}`">
+                    QRコードページへ
+                </button>
+            {% endif %}
+            <br>
+            <br>
+            <button type="submit" formaction="{% url 'accounts:logout' %}">
+                ログアウト
+            </button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>ログイン</title>
+    </head>
+    <body>
+        <h1>ログイン</h1>
+        <form action="{% url 'accounts:login' %}" method="post">
+            {% csrf_token %} 
+            <label for="id_username">ユーザーネーム or 学籍番号 : </label>
+            {{ form.username }}
+            {% if form.username.errors %}
+                <div class="error">
+                    {% for error in form.username.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <br>
+            <br>
+            <label for="id_password">パスワード : </label>
+            {{ form.password }}
+            {% if form.non_field_errors %}
+                <div class="error">
+                    {% for error in form.non_field_errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <br>
+            <br>
+            <button type="button" onclick="location.href=`{% url 'accounts:home' %}`">
+                戻る
+            </button>
+            <input type="submit" value="ログイン" />
+        </form>
+    </body>
+</html>
