@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% load static %}
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../../static/css/reader.css">
+        <link rel="stylesheet" href="{% static 'css/reader.css' %}">
         <title>QRコードリーダー</title>
     </head>
     <body>
@@ -28,6 +29,6 @@
         </button>
 
         <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
-        <script src="../../static/js/reader.js"></script>
+        <script src="{% static 'js/reader.js' %}"></script>
     </body>
 </html>
