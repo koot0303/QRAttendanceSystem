@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'css/reader.css' %}">
+        <title>QRコードリーダー</title>
+    </head>
+    <body>
+
+        <h1>QRコードリーダー</h1>
+
+        <div id="class-info">
+            <p>授業名: <span id="class-name">{{ course.name }}</span></p>
+            <p>開始時間: <span id="start-time">{{ course.start_time }}</span></p>
+            <p>先生の名前: <span id="teacher-name">{{ course.teacher }}</span></p>
+        </div>
+
+        <section id="contents">
+            <video id="camera" width="300" height="200" muted></video>
+            <canvas id="picture" width="300" height="200"></canvas>
+            <div id="result">
+                <small>※ここに読み取り結果が表示されます※</small>
+            </div>
+        </section>
+
+        <button type="button" onclick="location.href=`{% url 'courses:select' %}`">
+            戻る
+        </button>
+
+        <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+        <script src="{% static 'js/reader.js' %}"></script>
+    </body>
+</html>
