@@ -4,6 +4,7 @@ from .models import Course
 from .forms import CourseForm
 from datetime import datetime, timedelta
 
+#授業選択
 @login_required
 def select_course(request):
     #今週の授業とそれ以外と終了済み授業を分ける
@@ -38,6 +39,7 @@ def select_course(request):
     
     return render(request, 'courses/select_course.html', context)
 
+#授業選択
 @login_required
 def create_course(request):
     if request.method == 'POST':
@@ -50,4 +52,3 @@ def create_course(request):
     else:
         form = CourseForm()
     return render(request, 'courses/create_course.html', {'form': form})
-

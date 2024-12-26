@@ -8,7 +8,7 @@
     <h1>生徒アカウント登録</h1>
     <form action="{% url 'accounts:student_signup' %}" method="post">
         {% csrf_token %}
-        <label for="id_username">学籍番号(GXXXCXXXX) : </label>
+        <label for="id_username">学籍番号 : </label>
         {{ form.username }}
         {% if form.username.errors %}
             <div class="error">
@@ -19,7 +19,7 @@
         {% endif %}
         <br>
         <br>
-        <label for="id_email">メールアドレス(@g.neec.ac.jp) : </label>
+        <label for="id_email">メールアドレス : </label>
         {{ form.email }}
         {% if form.email.errors %}
             <div class="error">

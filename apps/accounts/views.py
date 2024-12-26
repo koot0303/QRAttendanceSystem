@@ -19,6 +19,7 @@ def signup_account_selection_view(request):
             return redirect('accounts:teacher_signup')
     return render(request, "accounts/account_selection.html")
 
+#教師用サインアップ
 def teacher_signup_view(request):
     if request.method == "POST":
         form = TeacherSignUpForm(request.POST)
@@ -30,6 +31,7 @@ def teacher_signup_view(request):
     param = {"form": form}
     return render(request, "accounts/teacher_signup.html", param)
 
+#生徒用サインアップ
 def student_signup_view(request):
     if request.method == "POST":
         form = StudentSignUpForm(request.POST)
@@ -65,5 +67,3 @@ def logout_view(request):
 @login_required
 def userpage_view(request):
     return render(request, "accounts/userpage.html")
-
-

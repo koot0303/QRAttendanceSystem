@@ -6,6 +6,7 @@ from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from io import BytesIO
 
+#QRコード生成
 def generate_qr(request):
     user = request.user
     qr_content = f"User Info: {user.username}, {user.email}"

@@ -21,18 +21,18 @@ class StudentSignUpForm(UserCreationForm):
         fields = ("username", "email", "password1", "password2")
 
     # バリデーション
-    def clean_username(self):
-        username = self.cleaned_data.get("username")
-        pattern = r'^G\d{3}C\d{4}$'
-        if not re.match(pattern, username):
-            raise forms.ValidationError("学籍番号は GXXXCXXXX の形式で入力してください。")
-        return username
+    # def clean_username(self):
+    #     username = self.cleaned_data.get("username")
+    #     pattern = r'^G\d{5}$'
+    #     if not re.match(pattern, username):
+    #         raise forms.ValidationError("学籍番号は G***** の形式で入力してください。")
+    #     return username
     
-    def clean_email(self):
-        email = self.cleaned_data.get("email")
-        if not email.endswith('@g.neec.ac.jp'):
-            raise forms.ValidationError("メールアドレスは @g.neec.ac.jp の形式で入力してください。")
-        return email
+    # def clean_email(self):
+    #     email = self.cleaned_data.get("email")
+    #     if not email.endswith('@***'):
+    #         raise forms.ValidationError("メールアドレスは @*** の形式で入力してください。")
+    #     return email
     
     def save(self, commit=True):
         user = super().save(commit=False)
