@@ -30,8 +30,8 @@ class StudentSignUpForm(UserCreationForm):
     
     # def clean_email(self):
     #     email = self.cleaned_data.get("email")
-    #     if not email.endswith('@***'):
-    #         raise forms.ValidationError("メールアドレスは @*** の形式で入力してください。")
+    #     if not email.endswith('@***.ac.jp'):
+    #         raise forms.ValidationError("メールアドレスは @***.ac.jp の形式で入力してください。")
     #     return email
     
     def save(self, commit=True):
