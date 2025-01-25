@@ -1,5 +1,0 @@
-#contents { display: flex; width: 650px; }
-#camera, #picture, #result { justify-content: center; margin: 5px; }
-#picture { display: none; }
-#result { border: 1px solid gray; width: 300px; height: 200px; padding: 10px; }
-small { color: gray; }

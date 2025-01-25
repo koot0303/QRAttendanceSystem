@@ -4,10 +4,10 @@ from .models import Course
 from .forms import CourseForm
 from datetime import datetime, timedelta
 
-#授業選択
+# 授業選択
 @login_required
 def select_course(request):
-    #今週の授業とそれ以外と終了済み授業を分ける
+    # 今週の授業とそれ以外と終了済み授業を分ける
     today = datetime.today().date()
     next_week = today + timedelta(days=7)
 
@@ -39,7 +39,7 @@ def select_course(request):
     
     return render(request, 'courses/select_course.html', context)
 
-#授業選択
+# 授業作成
 @login_required
 def create_course(request):
     if request.method == 'POST':

@@ -10,8 +10,10 @@ import openpyxl
 from openpyxl.styles import PatternFill, Border, Side
 from openpyxl.utils.dataframe import dataframe_to_rows
 from openpyxl.utils import get_column_letter
+from django.contrib.auth.decorators import login_required
 
 #QRコード読み込み
+@login_required
 def qr_reader_view(request, course_id):
     course = get_object_or_404(Course, id=course_id)
     context = {
@@ -20,6 +22,7 @@ def qr_reader_view(request, course_id):
     return render(request, 'attendances/qr_reader.html', context)
 
 #出席保存
+@login_required
 def save_attendance(request):
     if request.method == 'POST':
         qr_data = request.POST.get('qr_data', '')
@@ -80,6 +83,7 @@ def save_attendance(request):
         return JsonResponse({'status': 'error', 'message': 'POSTメソッドのみ対応しています'})
 
 #出席リスト表示
+@login_required
 def attendance_list_view(request, course_id):
     course = get_object_or_404(Course, id=course_id)
     attendances = Attendance.objects.filter(course=course).order_by('attendance_time')
@@ -91,6 +95,7 @@ def attendance_list_view(request, course_id):
     return render(request, 'attendances/attendance_list.html', context)
 
 #出席リスト(エクセルエクスポート)
+@login_required
 def export_attendance_to_excel(request, course_id):
     course = get_object_or_404(Course, id=course_id)
     attendances = Attendance.objects.filter(course=course).order_by('attendance_time')
