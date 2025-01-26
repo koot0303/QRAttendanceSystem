@@ -22,7 +22,6 @@ def qr_reader_view(request, course_id):
     return render(request, 'attendances/qr_reader.html', context)
 
 #出席保存
-@login_required
 def save_attendance(request):
     if request.method == 'POST':
         qr_data = request.POST.get('qr_data', '')
