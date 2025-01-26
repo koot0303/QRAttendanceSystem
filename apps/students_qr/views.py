@@ -5,8 +5,10 @@ from django.shortcuts import render
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from io import BytesIO
+from django.contrib.auth.decorators import login_required
 
 #QRコード生成
+@login_required
 def generate_qr(request):
     user = request.user
     qr_content = f"User Info: {user.username}, {user.email}"

@@ -47,7 +47,7 @@ function checkPicture() {
 }
 
 function sendQRData(data) {
-    const courseId = "{{ course.id }}";
+    // const courseId = "{{ course.id }}";
 
     fetch('/attendances/save_attendance/', {
         method: 'POST',

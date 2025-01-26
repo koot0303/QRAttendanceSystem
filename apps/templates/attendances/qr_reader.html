@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
     <head>
         {% load static %}
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="{% static 'css/reader.css' %}">
+        <link rel="stylesheet" href="{% static 'css/attendances/qr_reader.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>QRコードリーダー</title>
     </head>
     <body>
@@ -16,7 +18,7 @@
             <p>先生の名前: <span id="teacher-name">{{ course.teacher }}</span></p>
         </div>
 
-        <section id="contents">
+        <section>
             <video id="camera" width="300" height="200" muted></video>
             <canvas id="picture" width="300" height="200"></canvas>
             <div id="result">
@@ -29,6 +31,7 @@
         </button>
 
         <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+        <script>const courseId = "{{ course.id }}";</script>
         <script src="{% static 'js/reader.js' %}"></script>
     </body>
 </html>

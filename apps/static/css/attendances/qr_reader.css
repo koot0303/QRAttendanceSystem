@@ -1,0 +1,25 @@
+section {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+#camera, #picture, #result { 
+    justify-content: center; 
+    margin: 5px; 
+}
+
+#picture { 
+    display: none; 
+}
+
+#result { 
+    height: 100px;
+    width: 300px;
+    border: 1px solid gray; 
+    padding: 10px; 
+}
+
+small { 
+    color: gray; 
+}

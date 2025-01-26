@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
     <head>
-        <meta charset="UTF-8">
+        {% load static %}
+        <meta charset='UTF-8' />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>授業選択</title>
     </head>
     <body>
@@ -15,6 +18,7 @@
             {% for course in this_week_courses %}
                 <li>
                     授業名 : {{ course.name }} 開始日時 : {{ course.start_date }} 開始時間 : {{ course.start_time }}
+                    <br>
                     <button type="button" onclick="location.href=`{% url 'attendances:qr_reader' course_id=course.id %}`">
                         QRコードリーダー
                     </button>
@@ -32,6 +36,7 @@
             {% for course in other_courses %}
                 <li>
                     授業名 : {{ course.name }} 開始日時 : {{ course.start_date }} 開始時間 : {{ course.start_time }}
+                    <br>
                     <button type="button" onclick="location.href=`{% url 'attendances:qr_reader' course_id=course.id %}`">
                         QRコードリーダー
                     </button>
@@ -49,6 +54,7 @@
             {% for course in finished_courses %}
                 <li>
                     授業名 : {{ course.name }} 開始日時 : {{ course.start_date }} 開始時間 : {{ course.start_time }}
+                    <br>
                     <button type="button" onclick="location.href=`{% url 'attendances:qr_reader' course_id=course.id %}`">
                         QRコードリーダー
                     </button>

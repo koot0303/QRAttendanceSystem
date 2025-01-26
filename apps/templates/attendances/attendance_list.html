@@ -1,6 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
     <head>
+        {% load static %}
+        <meta charset='UTF-8' />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/attendances/attendance_list.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>出席リスト</title>
     </head>
     <body>
@@ -9,7 +14,7 @@
         <p>授業日時: {{ course.start_date }} {{ course.start_time }}</p>
         <p>教師: {{ course.teacher }}</p>
 
-        <table border="1">
+        <table>
             <thead>
                 <tr>
                     <th>学籍番号</th>
