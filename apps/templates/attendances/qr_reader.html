@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{% static 'css/attendances/qr_reader.css' %}">
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>QRコードリーダー</title>
     </head>
     <body>
@@ -20,6 +21,7 @@
         <section id="contents">
             <video id="camera" width="300" height="200" muted></video>
             <canvas id="picture" width="300" height="200"></canvas>
+            <br>
             <div id="result">
                 <small>※ここに読み取り結果が表示されます※</small>
             </div>

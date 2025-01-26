@@ -4,13 +4,15 @@
         {% load static %}
         <meta charset='UTF-8' />
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>生徒アカウント登録</title>
     </head>
     <body>
         <h1>生徒アカウント登録</h1>
         <form action="{% url 'accounts:student_signup' %}" method="post">
             {% csrf_token %}
-            <label for="id_username">学籍番号 : </label>
+            <label for="id_username">学籍番号</label>
+            <br>
             {{ form.username }}
             {% if form.username.errors %}
                 <div class="error">
@@ -21,7 +23,8 @@
             {% endif %}
             <br>
             <br>
-            <label for="id_email">メールアドレス : </label>
+            <label for="id_email">メールアドレス</label>
+            <br>
             {{ form.email }}
             {% if form.email.errors %}
                 <div class="error">
@@ -32,15 +35,19 @@
             {% endif %}
             <br>
             <br>
-            <label for="id_password1">パスワード : </label>
+            <label for="id_password1">パスワード</label>
+            <br>
             {{ form.password1 }}
+            <br>
+            <br>
+            <label for="id_password2">パスワード(確認用)</label>
+            <br>
+            {{ form.password2 }}
             <ul>
                 <li>学籍番号、メールアドレスと似ているパスワード、<br>
-                    よく使われるパスワードや数字のみのパスワードは使えません</li>
+                <li>よく使われるパスワードや数字のみのパスワードは使えません</li>
                 <li>パスワードは最低8文字以上必要です</li>
             </ul>
-            <label for="id_password2">パスワード(確認用) : </label>
-            {{ form.password2 }}
             <br>
             <br>
             <button type="button" onclick="location.href=`{% url 'accounts:home' %}`">
