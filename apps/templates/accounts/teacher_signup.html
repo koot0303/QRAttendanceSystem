@@ -8,6 +8,9 @@
         <title>教師アカウント登録</title>
     </head>
     <body>
+        <header>
+            <h1>QRAttendanceSystem</h1>
+        </header>
         <h1>教師アカウント登録</h1>
         <form action="{% url 'accounts:teacher_signup' %}" method="post">
             {% csrf_token %}

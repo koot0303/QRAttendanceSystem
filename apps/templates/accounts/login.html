@@ -8,6 +8,9 @@
         <title>ログイン</title>
     </head>
     <body>
+        <header>
+            <h1>QRAttendanceSystem</h1>
+        </header>
         <h1>ログイン</h1>
         <form action="{% url 'accounts:login' %}" method="post">
             {% csrf_token %} 

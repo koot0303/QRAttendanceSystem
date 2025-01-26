@@ -8,14 +8,17 @@
         <title>ホーム</title>
     </head>
     <body>
-            <h1>ホーム</h1>
-            <button type="button" onclick="location.href=`{% url 'accounts:signup_account_selection' %}`">
-                アカウント登録
-            </button>
-            <br>
-            <br>
-            <button type="button" onclick="location.href=`{% url 'accounts:login' %}`">
-                ログイン
-            </button>
+        <header>
+            <h1>QRAttendanceSystem</h1>
+        </header>
+        <h1>ホーム</h1>
+        <button type="button" onclick="location.href=`{% url 'accounts:signup_account_selection' %}`">
+            アカウント登録
+        </button>
+        <br>
+        <br>
+        <button type="button" onclick="location.href=`{% url 'accounts:login' %}`">
+            ログイン
+        </button>
     </body>
 </html>

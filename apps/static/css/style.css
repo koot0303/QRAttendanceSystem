@@ -5,6 +5,13 @@ body {
     flex-direction: column;
 }
 
+header {
+    font-size: 10px;
+    text-align: left;
+    background-color: #f7d777;
+    padding: 1px 20px;
+}
+
 button,input {
     font-size: 16px;
 }
