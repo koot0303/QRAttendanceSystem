@@ -20,13 +20,6 @@ QRコードの読み込むだけで出席確認が完了するWebアプリケー
 | フロントエンド | HTML,JavaScript |
 | データベース | SQlite |
 
-
-## 開発環境
-| 項目 | 内容 |
-| - | - |
-| エディタ | Visual Studio Code |
-| バージョン管理 | Git,Github |
-
 ## 今後の課題
 - GoogleOauthの導入
 - 早退者用の機能の導入
