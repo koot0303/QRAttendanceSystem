@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: qrattendancesystem
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn qratendancesystem.wsgi:application
+    preDeployCommand: python manage.py migrate
