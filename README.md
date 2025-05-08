@@ -18,7 +18,7 @@ QRコードの読み込むだけで出席確認が完了するWebアプリケー
 | バックエンド | Python |
 | フレームワーク | Django |
 | フロントエンド | HTML,JavaScript |
-| データベース | SQlite |
+| データベース | PostgresSQL(Render) |
 
 ## 今後の課題
 - GoogleOauthの導入
