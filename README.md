@@ -15,8 +15,7 @@ QRコードの読み込むだけで出席確認が完了するWebアプリケー
 ## 使用技術
 | 項目 | 内容 |
 | - | - |
-| バックエンド | Python |
-| フレームワーク | Django |
+| バックエンド | Python(Django) |
 | フロントエンド | HTML,JavaScript |
 | データベース | SQlite |
 
